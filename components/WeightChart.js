@@ -46,12 +46,29 @@ export default function WeightChart() {
                         label={{ value: '', position: 'insideRight', offset: -20 }}
                     />
                     <YAxis
-                        tick={{ fontSize: '1.3rem', fontWeight: 600 }}
+                        tick={({ payload, x, y, textAnchor }) => {
+                            const isFirstTick = payload.value === InitialWeight;
+                            return (
+                                <text
+                                    x={x}
+                                    y={y + 5}
+                                    fill={isFirstTick ? 'black' : 'white'}
+                                    textAnchor={textAnchor}
+                                    fontSize="1.3rem"
+                                    fontWeight="600"
+                                >
+                                    {payload.value}
+                                </text>
+                            );
+                        }}
                         domain={[targetWeight, InitialWeight]}
                         interval={0}
                         ticks={Array.from({ length: TargetLoss + 1 }, (_, i) => InitialWeight - i)}
                         label={{ value: 'kg', angle: -90, position: 'insideLeft', offset: 10 }}
+                        tickLine={false}
+                        axisLine={false}
                     />
+
 
                     <Tooltip />
                     <Area
@@ -70,7 +87,7 @@ export default function WeightChart() {
                 kg
             </div>
 
-            <div className="absolute lg:bottom-[2.2rem] right-0.5 bottom-[1.2rem] bg-blue-500 text-white px-2 py-1 lg:px-4 lg:py-2 rounded-full font-bold text-[10px] lg:text-lg">
+            <div className="absolute lg:bottom-[2.rem] right-0.5 bottom-[1.2rem] bg-blue-500 text-white px-2 py-1 lg:px-4 lg:py-2 rounded-full font-bold text-[10px] lg:text-lg">
                 Woche
             </div>
 
@@ -96,7 +113,7 @@ export default function WeightChart() {
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}>
-                        <span className='text-xs md:text-xl font-normal'>Ziel<br/><span className='text-sm md:text-2xl font-semibold'> {targetWeight} kg</span></span>
+                        <span className='text-xs md:text-xl font-normal'>Ziel<br /><span className='text-sm md:text-2xl font-semibold'> {targetWeight} kg</span></span>
                     </div>
                 </div>
                 <div className='w-4 h-4 md:w-5 md:h-5 border-[1px] bg-white border-gray-400 shadow-xl rounded-full'></div>
