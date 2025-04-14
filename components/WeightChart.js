@@ -91,7 +91,7 @@ export default function WeightChart() {
       <div className="absolute top-3 left-5 bg-blue-500 text-white px-3 py-1 rounded-full font-bold text-sm">
         kg
       </div>
-      <div className="absolute right-4 bottom-[3.5rem] bg-blue-500 text-white px-4 py-1 rounded-full font-bold text-sm">
+      <div className="absolute right-3 bottom-[3.2rem] bg-blue-500 text-white px-4 py-1 rounded-full font-bold text-sm">
         Woche
       </div>
     </div>
