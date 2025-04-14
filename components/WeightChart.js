@@ -120,10 +120,18 @@ export default function WeightChart() {
         <div className="bg-[#f5f8f8] p-4 rounded-[40px] w-2/3 h-2/3 flex justify-center items-center mx-auto relative shadow-sm">
             <Chart options={options} series={series} type="area" height={"90%"} className="w-full" />
 
-
-            <div style={{borderColor:""}} className="absolute right-4 bottom-[3.5rem] bg-blue-500 text-white px-4 py-1 rounded-full font-bold text-sm">
+            <div className="absolute top-3 left-5 bg-blue-500 text-white px-3 py-1 rounded-full font-bold text-sm">
+                kg
+            </div>
+            <div style={{ borderColor: "" }} className="absolute right-4 bottom-[3.5rem] bg-blue-500 text-white px-4 py-1 rounded-full font-bold text-sm">
                 Woche
             </div>
         </div>
     );
 }
+
+
+
+
+
+
