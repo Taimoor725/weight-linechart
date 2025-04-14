@@ -79,7 +79,7 @@ export default function WeightChart() {
                         tick={{ fontSize: 16, fontWeight: 600 }}
                         tickLine={false}
                         axisLine={false}
-                        label={{ value: 'Woche', position: 'insideRight', offset: -20 }}
+                        label={{ value: '', position: 'insideRight', offset: -20 }}
                     />
 
                     <YAxis
@@ -109,11 +109,10 @@ export default function WeightChart() {
             </div>
 
             {/* Woche bubble */}
-            <div className="absolute right-3 bottom-[3.2rem] bg-blue-500 text-white px-4 py-1 rounded-full font-bold text-sm">
+            <div className="absolute right-3 bottom-[3rem] bg-blue-500 text-white px-4 py-1 rounded-full font-bold text-sm">
                 Woche
             </div>
 
-            {/* Ziel bubble */}
             <div className='absolute right-[11.5rem] bottom-[10rem] flex flex-col gap-0 justify-center items-center'>
                 <div style={{
                     width: '8rem',
@@ -128,19 +127,21 @@ export default function WeightChart() {
                     textAlign: 'center',
                 }}>
                     <div style={{
-                        backgroundColor: '#a3e635',
-                        width: '6rem',
-                        height: '6rem',
+                        backgroundColor:'#C9CBCB',
+                        width: '7rem',
+                        height: '7rem',
+                        color:'black',
                         borderRadius: '9999px',
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}>
-                        Ziel<br />{targetWeight} kg
+                        {/* <div className=''>Final Goal</div> */}
+                        <span className='text-xl font-normal'>Ziel<br/> {targetWeight} kg</span>
                     </div>
                 </div>
-                <div className='w-8 border-[4px] border-blue-500 h-8 rounded-full'></div>
+                <div className='w-5 h-5 border-[4px] border-black  rounded-full'></div>
             </div>
         </div>
     );
