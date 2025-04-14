@@ -12,7 +12,7 @@ const data = [
   { week: 6, weight: 62 },
   { week: 8, weight: 56 },
   { week: 10, weight: 54 },
-  { week: 12, weight: 50 }
+  { week: 12, weight: 53 }
 ];
 
 const CustomTooltip = ({ active, payload }) => {
